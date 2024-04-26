@@ -28,30 +28,11 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomePage> createState() => CardBase();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+/*class _MyHomePageState extends State<MyHomePage> {
 
-  void _incrementCounter() {
-    setState(() {
-
-      _counter++;
-    });
-  }
-
-  void _reduceCounter() {
-    setState(() {
-      _counter--;
-    });
-  }
-
-  void _zeroCounter() {
-    setState(() {
-      _counter = 0;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,13 +58,118 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+
       persistentFooterButtons: [
-        Column(
-          Row(
-            
-          )
+        //Row botones,
         )
       ],
+    );
+  }
+}*/
+
+class CardBase extends State<MyHomePage> {
+  int _counter = 0;
+  bool Vivo = false;
+  bool Victoria= false;
+
+  void _incrementCounter() {
+    setState(() {
+
+      _counter++;
+    });
+  }
+
+  void _reduceCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
+
+  void _zeroCounter() {
+    setState(() {
+      _counter = 0;
+    });
+  }
+
+  void _Puntaje(){
+    if(_counter==10)
+      {
+        Vivo=false;
+        Victoria=false;
+      }
+    if(_counter==15)
+      {
+        Vivo=false;
+        Victoria=true;
+      }
+  }
+  String _revision(){
+    if(Victoria==true)
+      {
+        return 'Assets/Icons/vic.svg';
+      }
+    return 'Assets/Icons/der.svg';
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.album),
+              title: Text('Aplicacion basica'),
+              subtitle: Text('Primer juego.'),
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: SvgPicture.asset(_revision()),
+                ),
+              ],
+            ),
+            Row(
+
+
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children:<Widget> [
+                const Text(
+                  'Puntos:',
+                ),
+                Text(
+                  '$_counter',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+                // Reducir contador
+                FloatingActionButton(
+                    onPressed: _reduceCounter,
+                    child: const Icon(Icons.minimize),
+                    tooltip: 'Menos'
+                ),
+                //reiniciar contador
+
+                Visibility(
+                  child:FloatingActionButton(
+                    onPressed: _zeroCounter,
+                    child: const Icon(null),
+                    tooltip: 'Reiniciar',
+                  ),
+                  visible: Vivo,
+                ),
+                // Aumentar Contador
+                FloatingActionButton(
+                    onPressed: _incrementCounter,
+                    child: const Icon(Icons.add),
+                    tooltip: 'Más'
+                ),
+
+                const SizedBox(width: 8),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
