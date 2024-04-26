@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
+        fontFamily: 'Unows',
       ),
       home: const MyHomePage(title: 'Contador basico en flutter'),
     );
@@ -123,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // Reducir contador
             FloatingActionButton(
                 onPressed: _reduceCounter,
-                child: SvgPicture.asset
+                child: icon1(),
                 //const Icon(Icons.minimize),
                 tooltip: 'Menos'),
 
@@ -134,17 +135,47 @@ class _MyHomePageState extends State<MyHomePage> {
 
             FloatingActionButton(
                 onPressed: _zeroCounter,
-                child: const Icon(Icons.reset_tv),
+                child: icon3(),
                 tooltip: 'Reiniciar'),
 
             // Aumentar Contador
             FloatingActionButton(
                 onPressed: _incrementCounter,
-                child: const Icon(Icons.add),
+                child: icon2(),
                 tooltip: 'Más'),
           ],
         )
       ],
     );
+  }
+}
+
+class icon1 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return SvgPicture.asset('Assets/Icons/1.svg',
+    semanticsLabel: '1',
+    width: 50,
+    height: 50,);
+  }
+}
+
+class icon2 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return SvgPicture.asset('Assets/Icons/2.svg',
+      semanticsLabel: '1',
+      width: 50,
+      height: 50,);
+  }
+}
+
+class icon3 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return SvgPicture.asset('Assets/Icons/3.svg',
+      semanticsLabel: '1',
+      width: 50,
+      height: 50,);
   }
 }
