@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +14,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
+        fontFamily: 'letra',
       ),
-      home: const MyHomePage(title: 'Contador basico en flutter'),
+      home: const MyHomePage(title: 'Primer Juego '),
     );
   }
 }
@@ -76,12 +78,48 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       persistentFooterButtons: [
-        Row(
+        Column(
+          Row(
             
-
-
+          )
         )
       ],
+    );
+  }
+}
+//imagen de victoria
+class img_vic extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SvgPicture.asset(
+      'Assets/Icons/vic.svg',
+      semanticsLabel: 'My SVG Image',
+      width: 50,
+      height:50,
+    );
+  }
+}
+//imagen de derrota
+class img_der extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SvgPicture.asset(
+      'Assets/Icons/der.svg',
+      semanticsLabel: 'My SVG Image',
+      width: 50,
+      height:50,
+    );
+  }
+}
+//imagen de restart
+class img_rest extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SvgPicture.asset(
+      'Assets/Icons/rest.svg',
+      semanticsLabel: 'My SVG Image',
+      width: 50,
+      height:50,
     );
   }
 }
