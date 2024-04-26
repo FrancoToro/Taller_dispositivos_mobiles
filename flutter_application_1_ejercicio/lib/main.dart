@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -121,7 +123,8 @@ class _MyHomePageState extends State<MyHomePage> {
             // Reducir contador
             FloatingActionButton(
                 onPressed: _reduceCounter,
-                child: const Icon(Icons.minimize),
+                child: SvgPicture.asset
+                //const Icon(Icons.minimize),
                 tooltip: 'Menos'),
 
             /*// Reiniciar Contador
