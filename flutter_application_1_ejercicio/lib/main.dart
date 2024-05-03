@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1_ejercicio/ListaDetalle.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'detail.dart';
 
 
 void main() {
@@ -17,9 +20,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
-        fontFamily: 'Unows',
+        fontFamily: 'Warzone',
       ),
-      home: const MyHomePage(title: 'Contador basico en flutter'),
+      home: const MyHomePage(title: 'Titulo'),
     );
   }
 }
@@ -105,13 +108,19 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Puntaje:',
-            ),
+            Image.network('https://img.freepik.com/vector-gratis/ilustracion-icono-doodle-engranaje_53876-5596.jpg?size=338&ext=jpg&ga=GA1.1.1687694167.1714608000&semt=sph'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            Text(
+              'Mensaje',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            FloatingActionButton(
+                onPressed: _zeroCounter,
+                child: icon3(),
+                tooltip: 'Reiniciar'),
           ],
         ),
       ),
@@ -122,27 +131,27 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             // Reducir contador
-            FloatingActionButton(
-                onPressed: _reduceCounter,
+            FloatingActionButton( //Lista
+                onPressed: () {
+                  Navigator.of(context).push(
+                  MaterialPageRoute(
+                  builder: (context) => ListDetail(),
+                    ),
+                  );
+                },
                 child: icon1(),
-                //const Icon(Icons.minimize),
-                tooltip: 'Menos'),
-
-            /*// Reiniciar Contador
-          SvgPicture.asset(
-          icon1,
-          ),*/
-
-            FloatingActionButton(
-                onPressed: _zeroCounter,
-                child: icon3(),
-                tooltip: 'Reiniciar'),
-
+            ),
             // Aumentar Contador
-            FloatingActionButton(
-                onPressed: _incrementCounter,
+            FloatingActionButton(//Detalle
+                onPressed: (){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Detail(),
+                    ),
+                  );
+                },
                 child: icon2(),
-                tooltip: 'Más'),
+                ),
           ],
         )
       ],

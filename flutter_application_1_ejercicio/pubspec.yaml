@@ -61,9 +61,9 @@ flutter:
     - Assets/Icons/3.svg 
   
   fonts:
-     - family: Unows
+     - family: Warzone
        fonts:
-         - asset: Assets/fonts/Pokemon Hollow.ttf
+         - asset: Assets/fonts/Warzone.ttf
 
   uses-material-design: true
   
