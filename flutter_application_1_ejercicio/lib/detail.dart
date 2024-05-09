@@ -12,26 +12,28 @@ class Detail extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            'Texto de detalles',
+            'Aplicacion desarrollada para seguir el desarrollo y establecer metas para mejorar en Valorant',
             style: Theme.of(context).textTheme.headlineMedium,
+            textAlign: TextAlign.center,
           ),
+
           FloatingActionButton(
               onPressed:(){
                 Navigator.of(context).pop(
                   );
                 },
-              child: icon3(),
-              tooltip: 'Reiniciar'),
+              child: iconr(),
+              tooltip: 'Regresar'),
         ],
       ),
     ),
     );
   }
 }
-class icon3 extends StatelessWidget{
+class iconr extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    return SvgPicture.asset('Assets/Icons/3.svg',
+    return SvgPicture.asset('Assets/Icons/r.svg',
       semanticsLabel: '1',
       width: 50,
       height: 50,);
