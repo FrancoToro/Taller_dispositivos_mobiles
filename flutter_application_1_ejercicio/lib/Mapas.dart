@@ -8,16 +8,17 @@ class Mapas extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children:  <Widget>[
-          Center(
-            child:
-            FloatingActionButton(
-                onPressed:() {
-                  Navigator.of(context).pop(
-                  );
-                },
-                child: iconr(),
-                tooltip: 'Regresar'
-            ),
+          Row(
+            children:[
+              FloatingActionButton(
+                  onPressed:() {
+                    Navigator.of(context).pop(
+                    );
+                  },
+                  child: iconr(),
+                  tooltip: 'Regresar'
+              ),
+            ]
           ),
           Text('Mapas',
           textAlign: TextAlign.center,

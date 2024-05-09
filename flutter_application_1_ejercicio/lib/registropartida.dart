@@ -8,23 +8,33 @@ class registropartida extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children:  <Widget>[
-          Center(
-            child:
-            FloatingActionButton(
+          Row(
+              children:[
+                FloatingActionButton(
+                    onPressed:() {
+                      Navigator.of(context).pop(
+                      );
+                    },
+                    child: iconr(),
+                    tooltip: 'Regresar'
+                ),
+              ]
+          ),
+          Text('Registro',
+            textAlign: TextAlign.center,
+            style: new TextStyle(
+                fontSize: 40.0),
+          ),
+          new SizedBox(
+            width: 1.0,
+            height: 100.0,
+            child: ElevatedButton(
                 onPressed:() {
                   Navigator.of(context).pop(
                   );
                 },
-                child: iconr(),
-                tooltip: 'Regresar'
+                child:Icon(Icons.add, color: Colors.black,size: 50,),
             ),
-          ),
-          FloatingActionButton(
-              onPressed:() {
-
-              },
-              child: Icon(Icons.add),
-              tooltip: 'Regresar'
           ),
         ],
       ),

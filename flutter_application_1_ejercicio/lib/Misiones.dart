@@ -9,8 +9,9 @@ class Misiones extends StatelessWidget {
 
       body: ListView(
         children:  <Widget>[
-          Center(
-            child:
+
+          Row(
+            children:  <Widget>[
             FloatingActionButton(
                 onPressed:() {
                   Navigator.of(context).pop(
@@ -18,10 +19,12 @@ class Misiones extends StatelessWidget {
                 },
                 child: iconr(),
                 tooltip: 'Regresar'
-            ),
+             ),
+            ]
           ),
           Column(
             children: <Widget>[
+
               Row(
                 children: <Widget>[
                   Checkbox(
