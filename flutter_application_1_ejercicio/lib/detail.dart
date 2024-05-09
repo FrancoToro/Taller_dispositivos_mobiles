@@ -20,11 +20,7 @@ class Detail extends StatelessWidget {
                 tooltip: 'Regresar'
 
             ),
-            Text('Regresar',
-              textAlign: TextAlign.center,
-              style: new TextStyle(
-                  fontSize: 20.0),
-            ),
+
           ],
         ),
       TextField(

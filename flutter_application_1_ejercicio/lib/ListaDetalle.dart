@@ -22,11 +22,6 @@ class ListDetail extends StatelessWidget {
                 tooltip: 'Regresar'
 
             ),
-             Text('Regresar',
-             textAlign: TextAlign.center,
-             style: new TextStyle(
-             fontSize: 20.0),
-             ),
            ],
           ),
           Text('Mapa',
@@ -57,7 +52,7 @@ class ListDetail extends StatelessWidget {
                 ),
               );
             },
-            child: Icon(Icons.list, size: 50.0,),
+            child: Icon(Icons.app_registration, size: 50.0,),
           ),
           Text('Misiones',
             textAlign: TextAlign.center,
@@ -72,7 +67,7 @@ class ListDetail extends StatelessWidget {
                 ),
               );
             },
-            child: Icon(Icons.account_circle, size: 50.0,),
+            child: Icon(Icons.api, size: 50.0,),
           ),
         ],
       ),

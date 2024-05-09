@@ -33,7 +33,7 @@ class registropartida extends StatelessWidget {
                   Navigator.of(context).pop(
                   );
                 },
-                child:Icon(Icons.add, color: Colors.black,size: 50,),
+                child:Icon(Icons.add_circle_outline, color: Colors.black,size: 50,),
             ),
           ),
         ],
