@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // Reducir contador
             new SizedBox(
               width: 150.0,
-              height 100.0,
+              height: 100.0,
               child: ElevatedButton(
                 child: icon3(),
                 onPressed: () {
