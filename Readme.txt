@@ -15,6 +15,8 @@ Lista de Requerimiento
 
 •	Rendimiento
 	o	La aplicación funciona de manera fluida.
+•	Mapas
+	o	La aplicación almacena  los mapas.
 •	Usabilidad
 	o	La aplicación es predecible y sencilla de usar.
 	
