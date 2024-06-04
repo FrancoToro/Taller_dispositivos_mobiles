@@ -1,0 +1,1 @@
+La aplicacion consta de 2 secciones. Una que permite realizar practicas sencillas para  calentar antes de jugar partidas normales. En esta seccion se colocan ciertas metas que el ususario debe cumplir. En la segunda seccion, se podra agregar el registro de las partidas que se jueguen y ver el historial de las mismas.
