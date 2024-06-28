@@ -175,6 +175,29 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+      persistentFooterButtons: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            // Reducir contador
+            FloatingActionButton(
+                onPressed: _reduceCounter,
+                child: const Icon(Icons.minimize),
+                tooltip: 'Menos'),
+
+            FloatingActionButton(
+                onPressed: _zeroCounter,
+                child: const Icon(Icons.reset_tv),
+                tooltip: 'Reiniciar'),
+
+            // Aumentar Contador
+            FloatingActionButton(
+                onPressed: _incrementCounter,
+                child: const Icon(Icons.add),
+                tooltip: 'Más'),
+          ],
+        )
+      ],
       drawer: Drawer(
         child: ListView(
           // Important: Remove any padding from the ListView.
