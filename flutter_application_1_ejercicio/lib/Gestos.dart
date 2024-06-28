@@ -30,11 +30,7 @@ class Gestos extends StatelessWidget {
 
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                'Detalles de aplicacion',
-                style: Theme.of(context).textTheme.headlineMedium,
-                textAlign: TextAlign.center,
-              ),
+
             ],
           ),
       drawer: Drawer(
