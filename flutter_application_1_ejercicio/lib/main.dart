@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+
+//pantallas
+import 'detalles.dart';
+import 'Lista.dart';
+import 'Sensores.dart';
+import 'Gestos.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -134,8 +140,17 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: const Text('Home'),
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
+        ),
       ),
       body: Center(
 
@@ -160,29 +175,79 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      persistentFooterButtons: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      drawer: Drawer(
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
           children: [
-            // Reducir contador
-            FloatingActionButton(
-                onPressed: _reduceCounter,
-                child: const Icon(Icons.minimize),
-                tooltip: 'Menos'),
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child:
+              Icon(Icons.home),
+            ),
 
-            FloatingActionButton(
-                onPressed: _zeroCounter,
-                child: const Icon(Icons.reset_tv),
-                tooltip: 'Reiniciar'),
+            ListTile(
+              title: const Text('lista'),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Lista(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Detalle'),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => detalles(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Sensores'),
+              onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Sensores(),
+                    ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Gestos'),
+              onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Gestos(),
+                    ),
+                );
+              },
+            ),
 
-            // Aumentar Contador
-            FloatingActionButton(
-                onPressed: _incrementCounter,
-                child: const Icon(Icons.add),
-                tooltip: 'Más'),
+
           ],
-        )
-      ],
+        ),
+
+
+
+          /*child:
+        Column(
+
+      )*/
+      ),
     );
+
+
+
+
+
+
+
+
   }
 }
