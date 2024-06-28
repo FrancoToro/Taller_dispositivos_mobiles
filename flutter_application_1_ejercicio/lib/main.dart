@@ -51,48 +51,63 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState(){
     super.initState();
+    print('initState');
     print('initState [mounted = $mounted]');
   }
   @override
+  void didChangeDependencies(){
+    super.didChangeDependencies();
+    print('didChangeDependencies');
+  }
+
+  @override
   void didUpdateWidget(covariant MyHomePage oldWidget){
     super.didUpdateWidget(oldWidget);
+    print('didUpdaeWidget');
   }
 
   @override
   void setState(VoidCallback fn){
     super.setState(fn);
-
+    print('setState');
   }
 
   @override
   void deactivate(){
     super.deactivate();
+    print('deactivate');
   }
 
   @override
   void dispose(){
+    print('dispose');
     print('reassemble: mounted = $mounted');
   }
 
-
-
-
+  @override
+  void reassemble(){
+    super.reassemble();
+    print('reassemble');
+  }
 
   void _incrementCounter() {
     setState(() {
       _counter++;
+      cambiosEstado();
     });
   }
 
   void _reduceCounter() {
     setState(() {
       _counter--;
+      cambiosEstado();
     });
   }
 
   void _zeroCounter() {
     setState(() {
       _counter = 0;
+      deactivate();
     });
   }
 
@@ -102,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
       icono = img1;
       break;
 
-      case 15: _estado = "Ganaste";
+      case 15: _estado = "perdiste";
       icono = img2;
       break;
 
@@ -140,7 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_estado',
               style: TextStyle(fontFamily: 'monday'),
             ),
-            //SvgPicture.asset(icono),
+            SvgPicture.asset(icono, width: 40, height: 40,),
 
           ],
         ),

@@ -59,10 +59,10 @@ flutter:
 
 
   assets:
-    - assets/icons/img/1.svg
-    - assets/icons/img/2.svg
-    - assets/icons/img/3.svg
-    - assets/icons/img/4.svg
+    - assets/icons/1.svg
+    - assets/icons/2.svg
+    - assets/icons/3.svg
+    - assets/icons/4.svg
 
   fonts:
     - family: monday
